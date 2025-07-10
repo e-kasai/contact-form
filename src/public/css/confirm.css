@@ -1,0 +1,97 @@
+/*---------------------------------
+HEADER
+---------------------------------*/
+
+.header {
+    /* ヘッダーバーの高さを任意の太さになるようpxで固定（高さはレスポンシブでも変化させない） */
+    /* 横幅は自動的にautoになり親要素（body）と同じになる */
+    height: 90px;
+    background-color: black;
+}
+
+.header-container {
+    /* 横幅と左右の余白 レスポンシブ対応*/
+    /* 画面幅に合わせて横幅を変えるために%使用 希望の幅と左右の余白を%で計算 */
+    /* min関数を使用し最大幅を1166pxに指定し必要以上に横幅が大きくなるのを防ぐ */
+    width: min(96%, 1166px);
+    /* margin:auto = 自動的に左右に同じサイズの余白、この場合は4%ずつの余白がつく */
+    margin: auto;
+    /* heightは100%で指定、headerに合わせる */
+    height: 100%;
+    /* aタグを高さの中央に配置するためにalign-items:center（align-itemsはdisplayがないと使えない） */
+    display: flex;
+    align-items: center;
+}
+
+.header__logo {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*---------------------------------
+CONTACT TABLE
+---------------------------------*/
+
+/* 表のセクション自体の幅を全体の88.4％に指定 */
+.contact-table .container {
+    width: min(88.4%, 1166px);
+    margin: auto;
+    padding: 40px 0px;
+    border: solid 1px red;
+}
+
+/*表の上のヘッダー セクションの中央に配置 */
+.contact-table__header {
+    text-align: center;
+    margin: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ヘッダー除く表部分 */
+/* 親要素.contact-table .containerと同じ幅を使用 */
+.contact-table__table {
+    margin: auto;
+    max-width: 1166px;
+    width: 90%;
+    border: solid 1px silver;
+}
+
+/* フォントサイズをclampで可変にしてレスポンシブ対応 */
+/* 幅はtrの25％を使用 */
+
+.contact-table th {
+    width: 25%;
+    background: gainsboro;
+    font-size: clamp(10px, 2.2vw, 15px);
+    white-space: nowrap;
+}
+
+/* 幅はtrの残り75％を使用 */
+.contact-table td {
+    width: 75%;
+}
+
+/* 入力部分の幅は親要素tdの100% */
+.contact-table input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+}
+
+.contact-table__button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact-table__button-submit {
+    background: black;
+    color: white;
+    width: 180px;
+    height: 40px;
+    border-radius: 3px;
+    padding: 10px;
+}

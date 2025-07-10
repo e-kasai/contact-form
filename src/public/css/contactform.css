@@ -1,0 +1,79 @@
+/*---------------------------------
+CONTACT FORM
+---------------------------------*/
+.contact-form .container {
+    width: min(88.4%, 1166px);
+    margin: auto;
+    padding: 40px 0px;
+    border: solid 1px red;
+}
+
+.contact-form__header {
+    text-align: center;
+}
+
+.contact-form .content {
+    margin: auto;
+    max-width: 1166px;
+    width: 80%;
+    border: solid 1px aqua;
+}
+
+.contact-form__row {
+    display: flex;
+}
+
+.contact-form__row label {
+    width: 30%;
+}
+
+.contact-form__input {
+    width: 70%;
+}
+
+@media (max-width: 600px) {
+    .contact-form__form {
+        flex-direction: column;
+    }
+
+    .contact-form__row label,
+    .contact-form__input {
+        width: 100%;
+    }
+}
+
+input,
+textarea {
+    width: 100%;
+}
+
+.error-message {
+    height: 20px;
+}
+
+.error-message-text {
+    margin: 0 0 15px 0;
+    color: red;
+    font-size: 15px;
+}
+
+.required {
+    color: gray;
+    font-size: 12px;
+    background: moccasin;
+    margin-left: 10px;
+}
+
+.contact-form__button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact-form__button-submit {
+    background: black;
+    color: white;
+    width: 180px;
+    height: 40px;
+    border-radius: 3px;
+    padding: 10px;
+}

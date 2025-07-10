@@ -8,10 +8,17 @@ use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
-    public function index()
+
+    public function profile()
     {
-        return view('index');
+        return view('profile');
     }
+
+    public function contactform()
+    {
+        return view('contactform');
+    }
+
 
     public function confirm(ContactRequest $request)
     {

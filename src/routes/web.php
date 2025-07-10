@@ -16,12 +16,16 @@ use App\Http\Controllers\AuthController;
 */
 
 // お問い合わせフォームのルート
-Route::get('/contact', [ContactController::class, 'index']);
+Route::get('/profile', [ContactController::class, 'profile'])->middleware('auth');
+Route::get('/contact', [ContactController::class, 'contactform']);
 Route::post('/contacts/confirm', [ContactController::class, 'confirm']);
 Route::post('/contacts', [ContactController::class, 'store']);
 
-// 認証画面のルート
+
 Route::get('/', [AuthController::class, 'index']);
+
+// 認証画面のルート
+
 // Route::middleware('auth')->group(function () {
 //     Route::get('/', [AuthController::class, 'index']);
 // });

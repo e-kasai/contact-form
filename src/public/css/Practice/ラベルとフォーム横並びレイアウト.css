@@ -1,0 +1,21 @@
+/* display:flexでラベルとフォームを横並びにする*/
+/* align-items:centerでラベルとフォームの高さをそろえる*/
+.form-group{
+    display:flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border:solid 2px aqua;
+}
+/* widthを固定しラベルの文字数が増えてもフォームがずれないようにする*/
+/* text-alignで指定されたwidthないで右寄せ */
+label {
+    width: 120px;
+    text-align: right;
+    margin-right: 16px;
+    border:solid 2px blue;
+}
+/* flex:0.5 = 親要素form-groupの幅 - labelの幅120pxで残った幅の半分を使うという意味*/
+input {
+    flex:0.5;
+    padding: 8px;
+}
