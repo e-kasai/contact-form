@@ -1,0 +1,98 @@
+/*h2 は「要素自体はブロック」→でも中身の文字を中央にしたいから text-align */
+.form-heading{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* max-width: 600px;だと最大600pxまでで、画面に合わせて縮む(レスポンシブ)*/
+/*スマホは600px超えると崩れるがメディアクエリで対応可能*/
+.form-container{
+    max-width: 600px;
+    margin:0 auto;
+    border: solid 2px lawngreen;
+}
+
+/* 画面幅が768px以上（タブレット以上）になったら少し広くする */
+@media (min-width: 768px) {
+    .form-container {
+        max-width: 720px;
+    }
+}
+
+/* 画面幅が1024px以上（PC）になったらもっと広くする */
+@media (min-width: 1024px) {
+    .form-container {
+        max-width: 900px;
+    } }
+
+
+
+/* display:flexでラベルとフォームを横並びにする*/
+/* align-items:centerでラベルとフォームの高さをそろえる*/
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* widthを固定しラベルの文字数が増えてもフォームがずれないようにする*/
+/* text-alignで指定されたwidthないで左寄せにして頭をそろえている */
+label {
+    width: 150px;
+    text-align: left;
+    margin-right: 16px;
+}
+
+/* タブレット以上のとき（768px〜）はちょっと広く */
+@media (min-width: 768px) {
+    .form__label {
+        width: 140px;
+    }
+}
+
+/* PC以上のとき（1024px〜）はもっと広く */
+@media (min-width: 1024px) {
+    .form__label {
+        width: 180px;
+    } }
+
+/* inputとtextareaは flex:1 = form-groupの幅 - labelの幅120pxで残った幅の全部を使う*/
+input,
+textarea {
+    flex: 1;
+    padding: 8px;
+}
+
+/*必須の表示は見た目だけの問題なのでspanを使用しクラス名.requiredを設定*/
+/*margin-leftでラベルと少し間を空ける*/
+.required{
+    color:red;
+    font-size: 15px;
+    margin-left: 6px;
+}
+
+/*button 要素= インラインブロック（inline-block） 親が text-align: center を持つと、その中のインライン要素やインラインブロック要素が中央揃えになる*/
+/*margin: 0 auto;は button { display: block; } に変換しないと使えないのでtext-alignのほうを使う*/
+.form-button{
+    text-align: center;
+    border:solid 2px pink;
+}
+
+.form-button button {
+    padding: 10px 30px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer; }
+
+/*form-group の横並びの中にform-errorをいれない！ レイアウトが崩れる*/
+/*text-align: left;にしてエラーメッセージを左寄せにして自然な感じに*/
+/*heightで表示するだけの高さを確保しておく*/
+.form-error{
+    color:red;
+    height:20px;
+    text-align: left;
+}

@@ -1,0 +1,36 @@
+/*---------------------------------
+HEADER
+---------------------------------*/
+
+.header {
+    /* ヘッダーバーの高さを任意の太さになるようpxで固定（高さはレスポンシブでも変化させない） */
+    /* 横幅は自動的にautoになり親要素（body）と同じになる */
+    height: 90px;
+    background-color: black;
+}
+
+.header-container {
+    /* 横幅と左右の余白 レスポンシブ対応*/
+    /* 画面幅に合わせて横幅を変えるために%使用 希望の幅と左右の余白を%で計算 */
+    /* min関数を使用し最大幅を1166pxに指定し必要以上に横幅が大きくなるのを防ぐ */
+    width: min(96%, 1166px);
+    /* margin:auto = 自動的に左右に同じサイズの余白、この場合は4%ずつの余白がつく */
+    margin: auto;
+    /* heightは100%で指定、headerに合わせる */
+    height: 100%;
+    /* aタグを高さの中央に配置するためにalign-items:center（align-itemsはdisplayがないと使えない） */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.user_name {
+    color: white;
+}
