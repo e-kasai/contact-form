@@ -16,7 +16,7 @@ use App\Http\Controllers\AuthController;
 */
 
 // お問い合わせフォームのルート
-Route::get('/profile', [ContactController::class, 'profile'])->middleware('auth');
+Route::get('/mypage', [ContactController::class, 'mypage'])->middleware('auth');
 Route::get('/contact', [ContactController::class, 'contactform']);
 Route::post('/contacts/confirm', [ContactController::class, 'confirm']);
 Route::post('/contacts', [ContactController::class, 'store']);
